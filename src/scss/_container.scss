@@ -1,11 +1,11 @@
 .container {
-  display: grid;
-  place-content: center;
-  place-items: center;
-  align-content: center;
-  width: 500px;
-  margin: 20px auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   height: auto;
+  justify-content: center;
+  margin: 20px auto;
+  width: 500px;
 }
 
 @media (max-width: 700px){

@@ -4,29 +4,19 @@
 
 @import url(https://fonts.googleapis.com/css2?family=Paytone+One&display=swap);
 
-
-
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    color: darken(white, 3%);
-    
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  color: darken(white, 3%);
 }
-
-
 
 h1 {
   font-family: 'Paytone One', sans-serif;
   letter-spacing: 1px;
 }
 
-
-
-
-
-
-body{
-    background: $gradient;
-    font-family: 'Catamaran', sans-serif;
+body {
+  background: $gradient;
+  font-family: 'Catamaran', sans-serif;
 }
