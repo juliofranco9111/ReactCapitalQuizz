@@ -1,7 +1,7 @@
 import { countries } from './data';
 
 export const newQuestion = () => {
-  const random = Math.random() * countries.length;
+  const random = Math.random() * countries.length - 1;
 
   const randomCountry = Math.round(random);
 

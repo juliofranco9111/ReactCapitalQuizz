@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
-import { Question } from '../components/Question';
 import iconMedal from '../assets/medal.png';
+import { Question } from '../components/Question';
 import { newQuestion } from '../helpers/newQuestion';
 import { useHistory } from 'react-router-dom';
 
 export const QuizzPage = () => {
+
+  
+
   const history = useHistory();
 
-  const [question, setQuestion] = useState(newQuestion());
   const [error, setError] = useState(false);
-
   const [points, setPoints] = useState(0);
-
-  console.log(question);
+  const [question, setQuestion] = useState(newQuestion());
 
   const { country, responses, capital } = question;
+
+  const returnPage = () => {
+    history.push('/');
+  };
 
   const nextQuestion = () => {
     const nextQ = newQuestion();
@@ -24,7 +28,9 @@ export const QuizzPage = () => {
   const validate = (value) => {
     if (value === capital) {
       nextQuestion();
-      setPoints( points + 10 )
+      setPoints(points + 100);
+      localStorage.setItem('points', points + 100);
+
     } else {
       setError(true);
       setTimeout(() => {
@@ -36,7 +42,9 @@ export const QuizzPage = () => {
   return (
     <>
       <div className='quizz__puntuation'>
-        <button className='quizz__btn_salir'>Salir</button>
+        <button onClick={returnPage} className='quizz__btn_salir'>
+          Salir
+        </button>
         <div className='quizz__puntuation_number'>
           <div>{points}</div>
           <img src={iconMedal} alt='medal-icon' />
@@ -44,9 +52,7 @@ export const QuizzPage = () => {
       </div>
       <Question fn={validate} country={country} responses={responses} />
       {error && <div>La respuesta es: {capital}</div>}
-      {/* <button onClick={validate} className='profile__btn'>
-        Confirmar
-      </button> */}
+      
     </>
   );
 };
