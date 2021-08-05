@@ -21,7 +21,7 @@ export const GameOverPage = () => {
     history.push('/quizz');
   };
   return (
-    <div className='gameover'>
+    <div className='gameover animate__animated animate__fadeIn'>
         {
             !points || points === 0 ?
             <h1 className='gameover__title'>Juego terminado</h1>
@@ -40,7 +40,8 @@ export const GameOverPage = () => {
         Otra vez
       </button>
 
-      <img src={fiesta} className='gameover__icon-fiesta' alt='fiesta' />
+     { points > 0 &&
+      <img src={fiesta} className='gameover__icon-fiesta' alt='fiesta' />}
     </div>
   );
 };

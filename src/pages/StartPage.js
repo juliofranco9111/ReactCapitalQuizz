@@ -37,7 +37,7 @@ export const StartPage = () => {
     <>
       <img className='profile__logo' src={logo} alt='logo-earth' />
       <h1 className='profile__h1'>
-        ¿Cuánto sabes de . . . <br /> Geografía? 🤔
+        ¿Cuánto sabes de . . . <br /> Capitales mundiales? 🤔
       </h1>
 
       <h2 className='profile__h2'>Tu nombre</h2>
