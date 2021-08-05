@@ -68,4 +68,30 @@
  
 } 
 
+.quizz__error{
+  font-weight: 800;
+  font-size: 1em;
+}
+
+.quizz__error_icon{
+  width: 40px;
+  display: block;
+  margin: 0px auto;
+}
+
+@media (max-width: 700px){
+  .quizz__puntuation{
+    margin-bottom: 20px;
+  }
+
+  .question__container{
+    margin-top:10px;
+    margin-bottom: 0px;
+  }
+
+
+  
+    
+}
+
 

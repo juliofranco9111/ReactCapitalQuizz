@@ -12,13 +12,13 @@ export const GameOverPage = () => {
   const history = useHistory();
 
   const handleRedirection = () => {
-    history.push('/quizz');
     
-    if (!maxPoints || points > maxPoints) {
-        localStorage.setItem('maxPoints', points);
+    if (maxPoints==='null' || points > maxPoints) {
+      localStorage.setItem('maxPoints', points);
     }
     
     localStorage.removeItem('points');
+    history.push('/quizz');
   };
   return (
     <div className='gameover'>
@@ -26,13 +26,15 @@ export const GameOverPage = () => {
             !points || points === 0 ?
             <h1 className='gameover__title'>Juego terminado</h1>
            :
-           <h1 className='gameover__title'>Felicidades {nameUser && nameUser}</h1>
+           <h1 className='gameover__title'>Felicidades {(nameUser && nameUser !== '') && nameUser}</h1>
         }
       <div>
         <img src={iconMedal} class='gameover__icon' alt='medal-icon' />
         <h1 className='gameover__points'>{!points ? '0' : points}</h1>
-
-        <h2 className='gameover__best'>Mejor puntuación: {!maxPoints ? points : maxPoints}</h2>
+        {
+         (maxPoints && maxPoints !== 'null') && 
+          <h2 className='gameover__best'>Mejor puntuación: {!maxPoints || maxPoints === 'null' || points > maxPoints ? points : maxPoints}</h2>
+        }
       </div>
       <button onClick={handleRedirection} className='gameover__btn'>
         Otra vez

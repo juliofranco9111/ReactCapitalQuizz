@@ -1,35 +1,48 @@
 import { countries } from './data';
 
 export const newQuestion = () => {
-  const random = Math.random() * countries.length - 1;
+  const random = getRandomNumber(1, 197);
 
-  const randomCountry = Math.round(random);
+  const question = countries.find((country) => country.id === random);
 
-  const wrongResponses = randomCapitals();
+  const { country, capital } = question;
 
-  const arrayResponses = [...wrongResponses, countries[randomCountry].capital];
+  const wrongResponses = randomCapitals(capital);
 
-  const list = arrayResponses.sort(function () {
+  const arrayResponses = [...wrongResponses, capital];
+
+  const responses = arrayResponses.sort(function () {
     return Math.random() - 0.5;
   });
 
   return {
-    country: countries[randomCountry].country,
-    capital: countries[randomCountry].capital,
-    responses: list,
+    country,
+    capital,
+    responses,
   };
 };
 
-const randomCapitals = () => {
+const randomCapitals = (capital) => {
   let capitals = [];
 
-  for (let index = 0; index < 3; index++) {
-    const random = Math.random() * countries.length;
-    const rounded = Math.round(random);
-    capitals.push(countries[rounded].capital);
+  while (capitals.length < 3) {
+    const random = getRandomNumber(1, 197);
+    const response = countries.find((country) => country.id === random);
+
+    if (response.capital !== capital) {
+      capitals.push(response.capital);
+    }
   }
 
-  if (capitals.length > 0) {
+  return capitals;
+
+  /*   for (let index = 0; index < 3; index++) {
+    else{
+      return
+    }
+  } */
+
+  /* if (capitals.length > 0 && capitals.length === 3) {
     return capitals;
   } else {
     let capitals2 = [];
@@ -39,5 +52,11 @@ const randomCapitals = () => {
       capitals2.push(countries[rounded].capital);
     }
     return capitals2;
-  }
+  } */
+};
+
+const getRandomNumber = (min, max) => {
+  const result = Math.random() * (max - min) + min;
+
+  return Math.round(result);
 };
