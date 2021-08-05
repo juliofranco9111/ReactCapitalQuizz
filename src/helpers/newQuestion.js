@@ -1,9 +1,10 @@
 import { countries } from './data';
 
 export const newQuestion = () => {
-  const random = getRandomNumber(1, 197);
+  
+  const number = getRandomNumber(1, 197);
 
-  const question = countries.find((country) => country.id === random);
+  const question = getQuestion(number)
 
   const { country, capital } = question;
 
@@ -35,25 +36,11 @@ const randomCapitals = (capital) => {
   }
 
   return capitals;
-
-  /*   for (let index = 0; index < 3; index++) {
-    else{
-      return
-    }
-  } */
-
-  /* if (capitals.length > 0 && capitals.length === 3) {
-    return capitals;
-  } else {
-    let capitals2 = [];
-    for (let index = 0; index < 3; index++) {
-      const random = Math.random() * (countries.length - 1);
-      const rounded = Math.round(random);
-      capitals2.push(countries[rounded].capital);
-    }
-    return capitals2;
-  } */
 };
+
+const getQuestion = ( number ) => {
+  return countries.find((country) => country.id === number);
+}
 
 const getRandomNumber = (min, max) => {
   const result = Math.random() * (max - min) + min;
