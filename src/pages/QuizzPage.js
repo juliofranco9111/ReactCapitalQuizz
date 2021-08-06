@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import iconMedal from '../assets/medal.png';
-import iconError from '../assets/error.gif';
+import iconMedal from '../images/medal.png';
+import iconError from '../images/error.gif';
 import { Question } from '../components/Question';
 import { newQuestion } from '../helpers/newQuestion';
 import { useHistory } from 'react-router-dom';

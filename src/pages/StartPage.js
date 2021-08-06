@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import logo from '../assets/earth.gif';
 import { useForm } from '../hooks/useForm';
+import logo from '../images/eart.png'
 
 export const StartPage = () => {
   const [values, handleInputChange] = useForm({ name: '' });
@@ -35,7 +35,7 @@ export const StartPage = () => {
 
   return (
     <>
-      <img className='profile__logo' src={logo} alt='logo-earth' />
+      <img className='profile__logo animate__animated animate__pulse animate__infinite	infinite' src={logo} alt='logo-earth' width='100' height='100' />
       <h1 className='profile__h1'>
         ¿Cuánto sabes de . . . <br /> Capitales mundiales? 🤔
       </h1>
