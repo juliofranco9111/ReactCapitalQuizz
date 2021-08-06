@@ -1,6 +1,6 @@
 import React from 'react';
-import iconMedal from '../assets/medal.png';
-import fiesta from '../assets/fiesta.gif';
+import iconMedal from '../images/medal.png';
+import fiesta from '../images/fiesta.gif';
 import { useHistory } from 'react-router-dom';
 
 export const GameOverPage = () => {

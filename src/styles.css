@@ -95,7 +95,9 @@ body {
 }
 
 .profile__logo {
-  width: 140px;
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .profile__h1 {
