@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 import logo from '../images/eart.png'
 
-export const StartPage = () => {
+const StartPage = () => {
   const [values, handleInputChange] = useForm({ name: '' });
 
   const { name } = values;
@@ -40,11 +40,13 @@ export const StartPage = () => {
         ¿Cuánto sabes de . . . <br /> Capitales mundiales? 🤔
       </h1>
 
-      <h2 className='profile__h2'>Tu nombre</h2>
+     
 
       {!showForm ? (
         <form>
+          <label htmlFor='name'>Tu nombre:</label>
           <input
+            id='name'
             type='text'
             onChange={handleInputChange}
             name='name'
@@ -70,3 +72,5 @@ export const StartPage = () => {
     </>
   );
 };
+
+export default StartPage;

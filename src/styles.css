@@ -94,6 +94,12 @@ body {
   font-family: 'Catamaran', sans-serif;
 }
 
+label {
+  font-family: 'Paytone One', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
 .profile__logo {
   width: 100px;
   margin-top: 20px;
@@ -111,6 +117,10 @@ body {
   margin-top: 20px;
 }
 
+form {
+  margin-top: 20px;
+}
+
 .profile__input {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
@@ -118,7 +128,6 @@ body {
   display: block;
   font-size: 25px;
   height: 40px;
-  margin-top: 20px;
   padding: 0px 10px;
   width: 100%;
   outline: none;
