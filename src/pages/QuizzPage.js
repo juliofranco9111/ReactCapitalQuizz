@@ -5,7 +5,9 @@ import { Question } from '../components/Question';
 import { newQuestion } from '../helpers/newQuestion';
 import { useHistory } from 'react-router-dom';
 
-export const QuizzPage = () => {
+const QuizzPage = () => {
+
+  console.log('me ejecuto');
 
   //const maxPoints = localStorage.getItem('maxPoints')
 
@@ -66,3 +68,5 @@ export const QuizzPage = () => {
     </>
   );
 };
+
+export default QuizzPage;

@@ -3,7 +3,9 @@ import iconMedal from '../images/medal.png';
 import fiesta from '../images/fiesta.gif';
 import { useHistory } from 'react-router-dom';
 
-export const GameOverPage = () => {
+
+
+const GameOverPage = () => {
   const nameUser = localStorage.getItem('nombre');
 
   const points = localStorage.getItem('points');
@@ -29,7 +31,7 @@ export const GameOverPage = () => {
            <h1 className='gameover__title'>Felicidades {(nameUser && nameUser !== '') && nameUser}</h1>
         }
       <div>
-        <img src={iconMedal} class='gameover__icon' alt='medal-icon' />
+        <img src={iconMedal} className='gameover__icon' alt='medal-icon' />
         <h1 className='gameover__points'>{!points ? '0' : points}</h1>
         {
          (maxPoints && maxPoints !== 'null') && 
@@ -45,3 +47,5 @@ export const GameOverPage = () => {
     </div>
   );
 };
+
+export default GameOverPage;
