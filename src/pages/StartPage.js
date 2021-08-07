@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-import logo from '../images/eart.png'
+import logo from '../images/eart.png';
 
 const StartPage = () => {
   const [values, handleInputChange] = useForm({ name: '' });
@@ -35,12 +35,16 @@ const StartPage = () => {
 
   return (
     <>
-      <img className='profile__logo animate__animated animate__pulse animate__infinite	infinite' src={logo} alt='logo-earth' width='100' height='100' />
+      <img
+        className='profile__logo animate__animated animate__pulse animate__infinite	infinite'
+        src={logo}
+        alt='logo-earth'
+        width='100'
+        height='100'
+      />
       <h1 className='profile__h1'>
         ¿Cuánto sabes de . . . <br /> Capitales mundiales? 🤔
       </h1>
-
-     
 
       {!showForm ? (
         <form>
@@ -58,7 +62,7 @@ const StartPage = () => {
         </form>
       ) : (
         <>
-          <h1 className="profile__h1">{nameUser}</h1>
+          <h1 className='profile__h1'>{nameUser}</h1>
 
           <button onClick={handleChangeName} className='profile__btn_secondary'>
             Cambiar nombre

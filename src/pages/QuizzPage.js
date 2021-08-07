@@ -6,11 +6,6 @@ import { newQuestion } from '../helpers/newQuestion';
 import { useHistory } from 'react-router-dom';
 
 const QuizzPage = () => {
-
-  console.log('me ejecuto');
-
-  //const maxPoints = localStorage.getItem('maxPoints')
-
   const history = useHistory();
 
   const [error, setError] = useState(false);
@@ -33,12 +28,11 @@ const QuizzPage = () => {
       nextQuestion();
       setPoints(points + 100);
       localStorage.setItem('points', points + 100);
-
     } else {
       setError(true);
       setTimeout(() => {
         history.push('/game-over');
-      }, 2000); 
+      }, 2000);
     }
   };
 
@@ -53,18 +47,19 @@ const QuizzPage = () => {
           <img src={iconMedal} alt='medal-icon' />
         </div>
       </div>
-      <Question fn={validate} disabled={error} country={country} responses={responses} />
-      {error && 
-      
-      <div className='animate__animated animate__fadeIn'>
-      
-      
-      <img className='quizz__error_icon'  src={iconError} alt="error-icon" />
-      
-      <div className='quizz__error'>La respuesta es: {capital}</div>
-      </div>
-      }
-      
+      <Question
+        fn={validate}
+        disabled={error}
+        country={country}
+        responses={responses}
+      />
+      {error && (
+        <div className='animate__animated animate__fadeIn'>
+          <img className='quizz__error_icon' src={iconError} alt='error-icon' />
+
+          <div className='quizz__error'>La respuesta es: {capital}</div>
+        </div>
+      )}
     </>
   );
 };
