@@ -30,7 +30,7 @@ const StartPage = () => {
   };
 
   const handleStart = () => {
-    history.push('/quizz');
+    history.push('/level');
   };
 
   return (

@@ -38,9 +38,13 @@ const GameOverPage = () => {
           <h2 className='gameover__best'>Mejor puntuación: {!maxPoints || maxPoints === 'null' || points > maxPoints ? points : maxPoints}</h2>
         }
       </div>
+      <button onClick={handleRedirection} className='gameover__btn btn-secondary'>
+        Capitulos
+      </button>
       <button onClick={handleRedirection} className='gameover__btn'>
         Otra vez
       </button>
+      
 
      { points > 0 &&
       <img src={fiesta} className='gameover__icon-fiesta' alt='fiesta' />}

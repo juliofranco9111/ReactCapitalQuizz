@@ -1,7 +1,7 @@
 $primary: #1B1F4D;
 $secondary: #293165;
 $third: #383D70;
-$button: #DF00FF;
+$button: rgba(223, 0, 255, 0.5);
 $gradient: linear-gradient(to left, $primary, $third);
 $gradient-btn: linear-gradient(to right, $third, $button);
-
+$shadow: 2px 10px 5px -3px rgba(176,176,176,0.1);
