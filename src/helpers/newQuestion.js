@@ -1,10 +1,11 @@
 import { countries } from './data';
 
-export const newQuestion = () => {
-  
-  const number = getRandomNumber(1, 197);
+export const newQuestion = (level) => {
+  const data = getCountriesByLevel(level);
 
-  const question = getQuestion(number)
+  const number = getRandomNumber(0, data.length - 1);
+
+  const question = data[number];
 
   const { country, capital } = question;
 
@@ -38,12 +39,27 @@ const randomCapitals = (capital) => {
   return capitals;
 };
 
-const getQuestion = ( number ) => {
-  return countries.find((country) => country.id === number);
-}
-
 const getRandomNumber = (min, max) => {
   const result = Math.random() * (max - min) + min;
-
   return Math.round(result);
+};
+
+const getCountriesByLevel = (level) => {
+  switch (level) {
+    case 1:
+      return countries.filter((country) => country.area === 'América');
+    case 2:
+      return countries.filter((country) => country.area === 'Europa');
+    case 3:
+      return countries.filter((country) => country.area === 'Asia');
+    case 4:
+      return countries.filter((country) => country.area === 'África');
+    case 5:
+      return countries.filter((country) => country.area === 'Oceanía');
+    case 6:
+      return countries;
+
+    default:
+      break;
+  }
 };

@@ -1,0 +1,37 @@
+.level__container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top:20px;
+    margin-bottom:20px;
+
+}
+
+.level__option{
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+
+    text-align: center;
+    font-weight: 700;
+    h2{
+        font-size: 1em;
+    }
+    p{
+        font-size: 0.8em;
+    }
+
+    .level__icon_medal{
+        transition: transform 300ms;
+        border-radius: 999;
+    }
+
+    &:hover{
+        .level__icon_medal{
+            transform: scale(1.05);
+            box-shadow: $shadow;
+        }
+    }
+
+}
