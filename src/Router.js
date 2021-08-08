@@ -22,7 +22,7 @@ const RouterApp = () => {
           <Route exact path='/' component={StartPage} />
           <Route exact path='/level' component={LevelPage} />
           <Route exact path='/quizz/:level' component={QuizzPage} />
-          <Route exact path='/game-over' component={GameOverPage} />
+          <Route exact path='/game-over/:level/:points' component={GameOverPage} />
         </Suspense>
       </Switch>
     </Router>

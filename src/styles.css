@@ -64,12 +64,11 @@
   width: 100%;
   font-size: 20px;
   font-weight: 600;
-  margin-top: 40px;
+  margin-top: 15px;
   border-radius: 5px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   background: rgba(223, 0, 255, 0.5);
   cursor: pointer;
-  margin-bottom: 40px;
 }
 
 .gameover__btn:hover {
@@ -249,21 +248,10 @@ form {
   height: 50px;
 }
 
-.quizz__puntuation .quizz__btn_salir {
-  height: 45px;
-  background: transparent;
-  vertical-align: middle;
-  border-radius: 5px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  font-size: 20px;
-  width: 120px;
-  height: 100%;
-}
-
-.quizz__puntuation .quizz__btn_salir:hover {
-  background: rgba(223, 0, 255, 0.1);
-  box-shadow: 2px 10px 5px -3px rgba(176, 176, 176, 0.1);
+.quizz__puntuation .quizz__button {
+  width: 150px;
+  display: flex;
+  align-items: center;
 }
 
 .quizz__puntuation .quizz__puntuation_number {
