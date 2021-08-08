@@ -12,15 +12,15 @@ const GameOverPage = () => {
   const history = useHistory();
 
   const handleRedirection = () => {
-    history.goBack();
+    history.push(`/quizz/${level}`);
   };
 
   const goLevels = () => {
-    history.push(`quizz/${level}`);
+    history.push(`/level`);
   };
   return (
     <div className='gameover animate__animated animate__fadeIn'>
-      {!points || points === 0 ? (
+      {points === 0 ? (
         <h1 className='gameover__title'>Juego terminado</h1>
       ) : (
         <h1 className='gameover__title'>
@@ -30,13 +30,8 @@ const GameOverPage = () => {
       <div>
         <img src={iconMedal} className='gameover__icon' alt='medal-icon' />
         <h1 className='gameover__points'>{points}</h1>
-        {maxPoints && maxPoints !== 'null' && (
-          <h2 className='gameover__best'>
-            Mejor puntuación:{' '}
-            {!maxPoints || maxPoints === 'null' || points > maxPoints
-              ? points
-              : maxPoints}
-          </h2>
+        {maxPoints > 0 && (
+          <h2 className='gameover__best'>Mejor puntuación: {maxPoints}</h2>
         )}
       </div>
       <button onClick={goLevels} className='gameover__btn btn-secondary'>
