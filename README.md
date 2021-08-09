@@ -30,7 +30,7 @@ yarn start o npm start
 
 > * PWA con Service Worker y soporte 100% Offline
 > * Code Splitting con React Lazy
-> * Sass
+> * Sass (Patron de diseño: Mobile Only)
 > * React Router
 > * Deploy en Vercel
 
