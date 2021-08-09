@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import RouterApp from './Router';
 
 //import { StartPage } from './pages/StartPage';
