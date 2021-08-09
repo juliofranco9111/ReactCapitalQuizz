@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-//import './animate.css';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import RouterApp from './Router';
 
@@ -10,7 +9,7 @@ import RouterApp from './Router';
 
 function App() {
   return (
-    <div className='container'>
+    <div className='container animated fadeIn'>
         <RouterApp />
     </div>
   );

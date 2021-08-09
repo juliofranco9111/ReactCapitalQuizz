@@ -9,7 +9,7 @@ export const Levels = ({ object, fn }) => {
   return (
     <div onClick={() => {fn(level)}} className='btn-secondary level__option'>
       <div>
-        <h2>{returnRoman(level)}</h2>
+        <h1 className='level__title'>{returnRoman(level)}</h1>
         <p>{area}</p>
       </div>
 

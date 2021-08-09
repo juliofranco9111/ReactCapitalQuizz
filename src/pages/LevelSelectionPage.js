@@ -28,12 +28,12 @@ const LevelPage = () => {
 
   return (
     <>
-      <div className='level__container'>
+      <div className='level__container animated fadeIn faster'>
         {areas.map((object) => (
           <Levels key={object.level} fn={handleSelectLevel} object={object} />
           ))}
       </div>
-          <button onClick={goBack} className="btn-secondary">Atrás</button>
+          <button onClick={goBack} className="btn-secondary animated fadeIn">Atrás</button>
     </>
   );
 };

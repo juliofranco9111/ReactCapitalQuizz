@@ -20,7 +20,7 @@ const GameOverPage = () => {
   };
   return (
     <div className='gameover animate__animated animate__fadeIn'>
-      {points === 0 ? (
+      {points === '0' ? (
         <h1 className='gameover__title'>Juego terminado</h1>
       ) : (
         <h1 className='gameover__title'>
