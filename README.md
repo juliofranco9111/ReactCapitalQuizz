@@ -1,7 +1,3 @@
-# Quizz Capital App
-
-Progressive Web App creada con ReactJs
-
 # Quizz Capital App 🌐
 
 Progressive Web App creada con React Js
