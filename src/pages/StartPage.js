@@ -36,18 +36,18 @@ const StartPage = () => {
   return (
     <>
       <img
-        className='profile__logo animate__animated animate__pulse animate__infinite	infinite'
+        className='profile__logo animated pulse slower infinite'
         src={logo}
         alt='logo-earth'
         width='100'
         height='100'
       />
-      <h1 className='profile__h1'>
+      <h1 className='profile__h1 animated fadeIn'>
         ¿Cuánto sabes de . . . <br /> Capitales mundiales? 🤔
       </h1>
 
       {!showForm ? (
-        <form>
+        <form className='animated fadeIn'>
           <label htmlFor='name'>Tu nombre:</label>
           <input
             id='name'
@@ -62,13 +62,13 @@ const StartPage = () => {
         </form>
       ) : (
         <>
-          <h1 className='profile__h1'>{nameUser}</h1>
+          <h1 className='profile__h1 animated fadeIn'>{nameUser}</h1>
 
-          <button onClick={handleChangeName} className='profile__btn_secondary'>
+          <button onClick={handleChangeName} className='profile__btn_secondary animated fadeIn'>
             Cambiar nombre
           </button>
 
-          <button onClick={handleStart} className='profile__btn'>
+          <button onClick={handleStart} className='profile__btn animated fadeIn'>
             Empezar
           </button>
         </>

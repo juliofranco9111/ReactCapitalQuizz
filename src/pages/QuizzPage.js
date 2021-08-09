@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import iconMedal from '../images/medal.png';
-import iconError from '../images/error.gif';
 import { Question } from '../components/Question';
 import { newQuestion } from '../helpers/newQuestion';
 import { useHistory, useParams } from 'react-router-dom';
@@ -8,11 +7,11 @@ import { storeLevelData } from '../helpers/storeData';
 
 const QuizzPage = () => {
   const history = useHistory();
-  const {level} = useParams();
+  const { level } = useParams();
   const levelSelected = parseInt(level);
 
-
   const [error, setError] = useState(false);
+  const [trueAnswer, setTrueAnswer] = useState(false);
   const [points, setPoints] = useState(0);
   const [question, setQuestion] = useState(newQuestion(levelSelected));
 
@@ -29,11 +28,15 @@ const QuizzPage = () => {
 
   const validate = (value) => {
     if (value === capital) {
-      nextQuestion();
       setPoints(points + 100);
+      setTrueAnswer(true);
+      setTimeout(() => {
+        setTrueAnswer(false);
+        nextQuestion();
+      }, 1000);
     } else {
       setError(true);
-      storeLevelData(levelSelected, points)
+      storeLevelData(levelSelected, points);
       setTimeout(() => {
         history.push(`/game-over/${level}/${points}`);
       }, 2000);
@@ -41,8 +44,8 @@ const QuizzPage = () => {
   };
 
   return (
-    <>
-      <div className='quizz__puntuation'>
+    <div className='quizz__container'>
+      <div className='quizz__puntuation animated fadeIn'>
         <div className='quizz__button'>
           <button onClick={returnPage} className='btn-secondary'>
             Salir
@@ -60,13 +63,20 @@ const QuizzPage = () => {
         responses={responses}
       />
       {error && (
-        <div className='animate__animated animate__fadeIn'>
-          <img className='quizz__error_icon' src={iconError} alt='error-icon' />
+        <div className='animated fadeIn'>
+          <h1 className='animated pulse infinite quizz__error_icon'>❌</h1>
 
-          <div className='quizz__error'>La respuesta es: {capital}</div>
+          <div className='quizz__error'>
+            <h2>La respuesta es: {capital}</h2>
+          </div>
         </div>
       )}
-    </>
+      {trueAnswer && (
+        <div className='animated fadeIn'>
+          <h1 className='animated pulse infinite quizz__error_icon true'>✔</h1>
+        </div>
+      )}
+    </div>
   );
 };
 

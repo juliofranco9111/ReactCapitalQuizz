@@ -1,0 +1,17 @@
+.loader__cointainer{
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    font-size: 1.3em;
+    display: grid;
+    place-content: center;
+
+    .h1{
+        
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+    }
+}

@@ -1,5 +1,130 @@
+/*!
+ * animate.css - https://animate.style/
+ * Version - 4.1.1
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2020 Animate.css
+ */
 @import url(https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;800;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Paytone+One&display=swap);
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1
+;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-duration: var(--animate-duration);
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+.animated.repeat-1 {
+  animation-iteration-count: 1;
+  animation-iteration-count: var(--animate-repeat);
+}
+
+.animated.repeat-2 {
+  animation-iteration-count: 2;
+  animation-iteration-count: calc(var(--animate-repeat)*2);
+}
+
+.animated.repeat-3 {
+  animation-iteration-count: 3;
+  animation-iteration-count: calc(var(--animate-repeat)*3);
+}
+
+.animated.delay-1s {
+  animation-delay: 1s;
+  animation-delay: var(--animate-delay);
+}
+
+.animated.delay-2s {
+  animation-delay: 2s;
+  animation-delay: calc(var(--animate-delay)*2);
+}
+
+.animated.delay-3s {
+  animation-delay: 3s;
+  animation-delay: calc(var(--animate-delay)*3);
+}
+
+.animated.delay-4s {
+  animation-delay: 4s;
+  animation-delay: calc(var(--animate-delay)*4);
+}
+
+.animated.delay-5s {
+  animation-delay: 5s;
+  animation-delay: calc(var(--animate-delay)*5);
+}
+
+.animated.faster {
+  animation-duration: .5s;
+  animation-duration: calc(var(--animate-duration)/2);
+}
+
+.animated.fast {
+  animation-duration: .8s;
+  animation-duration: calc(var(--animate-duration)*0.8);
+}
+
+.animated.slow {
+  animation-duration: 2s;
+  animation-duration: calc(var(--animate-duration)*2);
+}
+
+.animated.slower {
+  animation-duration: 3s;
+  animation-duration: calc(var(--animate-duration)*3);
+}
+
+@media (prefers-reduced-motion: reduce), print {
+  .animated {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .animated[class*=Out] {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
 .container {
   align-items: center;
   display: flex;
@@ -136,7 +261,7 @@ label {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
@@ -146,6 +271,10 @@ label {
   cursor: pointer;
   text-align: center;
   font-weight: 700;
+}
+
+.level__option .level__title {
+  color: white;
 }
 
 .level__option h2 {
@@ -164,6 +293,23 @@ label {
 .level__option:hover .level__icon_medal {
   transform: scale(1.05);
   box-shadow: 2px 10px 5px -3px rgba(176, 176, 176, 0.1);
+}
+
+.loader__cointainer {
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-size: 1.3em;
+  display: grid;
+  place-content: center;
+}
+
+.loader__cointainer .h1 {
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
 }
 
 .profile__logo {
@@ -239,8 +385,14 @@ form {
   box-shadow: 2px 10px 5px -3px rgba(176, 176, 176, 0.1);
 }
 
-.quizz__puntuation {
+.quizz__container {
   display: flex;
+  flex-direction: column;
+}
+
+.quizz__container .quizz__puntuation {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 40px;
   margin-top: 20px;
@@ -248,30 +400,35 @@ form {
   height: 50px;
 }
 
-.quizz__puntuation .quizz__button {
-  width: 150px;
-  display: flex;
-  align-items: center;
+.quizz__container .quizz__puntuation .quizz__button {
+  align-self: center;
+  width: 40%;
 }
 
-.quizz__puntuation .quizz__puntuation_number {
+.quizz__container .quizz__puntuation .quizz__puntuation_number {
   display: flex;
   font-size: 2em;
 }
 
-.quizz__puntuation .quizz__puntuation_number img {
+.quizz__container .quizz__puntuation .quizz__puntuation_number img {
   height: 50px;
   margin-left: 10px;
   width: 50px;
 }
 
-.quizz__h1 {
+.quizz__container .quizz__h1 {
   font-size: 1.5em;
   letter-spacing: 1px;
   text-align: center;
+  flex-direction: column;
 }
 
-.quizz__options {
+.quizz__container .true {
+  color: green;
+  font-size: 4em;
+}
+
+.quizz__container .quizz__options {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -279,7 +436,7 @@ form {
   margin: 40px 0px;
 }
 
-.quizz__option {
+.quizz__container .quizz__option {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 5px;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -292,26 +449,30 @@ form {
   width: 100%;
 }
 
-.quizz__option:active {
+.quizz__container .quizz__option:active {
   border: 4px solid rgba(255, 255, 255, 0.5);
 }
 
-.quizz__error {
+.quizz__container .quizz__error {
   font-weight: 800;
   font-size: 1em;
 }
 
-.quizz__error_icon {
+.quizz__container .quizz__error h2 {
+  text-align: center;
+}
+
+.quizz__container .quizz__error_icon {
   width: 40px;
   display: block;
   margin: 0px auto;
 }
 
 @media (max-width: 700px) {
-  .quizz__puntuation {
+  .quizz__container .quizz__puntuation {
     margin-bottom: 20px;
   }
-  .question__container {
+  .quizz__container .question__container {
     margin-top: 10px;
     margin-bottom: 0px;
   }
