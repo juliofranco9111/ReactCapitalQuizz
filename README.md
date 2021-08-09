@@ -20,7 +20,7 @@ yarn install o npm install
 
 Luego para ejecutar el proyecto en el localhost:3000 usa: 
 
-```bash
+```terminal
 
 yarn start o npm start
 
